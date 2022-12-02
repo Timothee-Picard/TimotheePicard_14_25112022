@@ -8,25 +8,31 @@ import {EmployeeContext} from "./contexte/store"
 import EmployeeList from "./pages/employee-list/employee-list.jsx";
 import Home from "./pages/home/home";
 import Error from "./pages/error/error.jsx";
+import Layout from "./components/layout/layout.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
-    },
-    ,
-    {
-        path: "/employee-list",
-        element: <EmployeeList />,
-    },
-    {
-        path: "/404",
-        element: <Error />,
-    },
-    {
-        path: "/*",
-        element: <Error />,
-    },
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/employee-list",
+                element: <EmployeeList />,
+            },
+            {
+                path: "/404",
+                element: <Error />,
+            },
+            {
+                path: "/*",
+                element: <Error />,
+            }
+        ]
+    }
 ]);
 
 const App = () => {

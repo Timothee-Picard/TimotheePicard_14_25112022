@@ -8,7 +8,6 @@ export default function EmployeeList() {
             <div>
               <EnhancedTable />
             </div>
-            <Link to="/">Home</Link>
         </div>
     </>
   )
