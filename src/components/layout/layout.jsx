@@ -6,10 +6,11 @@ export default function Layout() {
     return (
         <>
             <header className="main-menu">
-                <img src="/logo.jpg" alt="logo entreprise"/>
+                <img src="/logo.jpg" alt="logo entreprise" width="200px" height="200px"/>
                 {
-                    (path.pathname == "/")? (<Link to="/employee-list">View employees list</Link>)
-                        : <Link to="/" className="logo">Home</Link>
+                    (path.pathname == "/")?
+                        <Link to="/employee-list">View employees list</Link> :
+                        <Link to="/" className="logo">Home</Link>
                 }
             </header>
             <main>
